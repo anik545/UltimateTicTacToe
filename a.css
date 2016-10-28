@@ -1,0 +1,68 @@
+#ttt{
+    white-space: nowrap;
+}
+
+div[class^="out"]{
+    padding:5px;
+    display: inline-block;;
+}
+
+
+div[class^=in]{
+    width:32%;
+    height:32%;
+    float:left;
+    padding:1px;
+}
+
+/*===========================*/
+div div[class^=out]:nth-of-type(-n+3) {
+    border-bottom: 2px solid;
+}
+div div[class^=out]:nth-of-type(-n+6) {
+    border-bottom: 2px solid;
+}
+div div[class^=out]:nth-of-type(1), div[class^=out]:nth-of-type(2), div[class^=out]:nth-of-type(4), div[class^=out]:nth-of-type(5), div[class^=out]:nth-of-type(7), div[class^=out]:nth-of-type(8) {
+    border-right: 2px solid;
+}
+
+.in00{
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+.in01{
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+
+}
+.in02{
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+}
+.in10{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+.in11{
+    border: 1px solid grey;
+}
+.in12{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+}
+.in20{
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+}
+.in21{
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+.in22{
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+}
