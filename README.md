@@ -1,2 +1,2 @@
 # UltimateTicTacToe
-Shitty Ultimate Tic-Tac-Toe
+Shitty 9x9 Tic-Tac-Toe
