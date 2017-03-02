@@ -1,0 +1,21 @@
+.cboard{
+    border: 1px solid black;
+    width: 300px;
+    display: inline-block;
+}
+#ttt{
+    white-space: nowrap;
+    font-size: 0;
+}
+
+
+
+div div[class^=cboard]:nth-of-type(-n+3) {
+    border-bottom: 2px solid;
+}
+div div[class^=cboard]:nth-of-type(-n+6) {
+    border-bottom: 2px solid;
+}
+div div[class^=cboard]:nth-of-type(1), div[class^=cboard]:nth-of-type(2), div[class^=cboard]:nth-of-type(4), div[class^=cboard]:nth-of-type(5), div[class^=cboard]:nth-of-type(7), div[class^=cboard]:nth-of-type(8) {
+    border-right: 2px solid;
+}
