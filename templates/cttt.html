@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='board/css/chessboard-0.3.0.min.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</script>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/cttt.css') }}">
+
+
+</script>
+</head>
+
+<body>
+  <div id="ttt"></div>
+  <script src="{{ url_for('static',filename='scripts/ctt.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='board/js/chessboard-0.3.0.min.js') }}" ></script>
+  <div>
+      <input id="save-in" type="text" name="name" placeholder="Save as...">
+      <input id="save-btn" type="button" value="Save">
+      <input id="load-in" type="text" name="name" placeholder="Load...">
+      <input id="load-btn" type="button" value="Load">
+  </div>
+</body>
+
+</html>

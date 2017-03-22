@@ -3,6 +3,8 @@ function chess_game(x,y){
     var game = new Chess()
     this.x = x
     this.y = y
+    this.done = false
+    this.winner = ''
     this.onDrop = function(source,target){
         var move = game.move({from: source, to: target, promotion:'q'});
         if (move==null){
@@ -12,6 +14,8 @@ function chess_game(x,y){
                 // black: -1
                 wins[this.x][this.y] = turn === 'b' ? -1 : 1
                 updateScores(this.x,this.y,turn === 'b' ? -1 : 1)
+                this.winner = turn
+                this.done = true
                 checkGameOver()
                 self.board.destroy()
                 $('#'+x+y).css('color',turn==='b'?'red':'blue')
@@ -85,4 +89,28 @@ var scores = [0,0,0,0,0,0,0,0]
 turn = 'w'
 $(document).ready(function(){
     setup()
+    $('#save-btn').on('click',function(){
+        name = $('#save-in').val()
+        save = ''
+        for (var i = 0; i < chess_games.length; i++) {
+            save += ';' + chess_games[i].board.fen()
+        }
+        console.log(name,save);
+        $.post('/_save',{name:name,save:save},function(data){
+            alert('success')
+        }).fail(function(){
+            alert('failure')
+        })
+    })
+    $('#load-btn').on('click',function(){
+        name = $('#load-in').val()
+        console.log(name);
+        $.getJSON('/_load',{name:name},function(data){
+            console.log(data.save);
+            save_state = data.save.split(';')
+            for (var i = 0; i < chess_games.length; i++) {
+                chess_games[i].board.position(save_state[i])
+            }
+        })
+    })
 })
